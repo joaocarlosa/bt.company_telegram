@@ -13,10 +13,12 @@ class CreatePhotosTable extends Migration
     public function up()
     {
         Schema::create('photos', function (Blueprint $table) {
+            
+            
             $table->id();
+            $table->string('file_unique_id')->default(''); // Valor padrão            
             $table->bigInteger('message_id');
             $table->string('file_id')->unique();
-            $table->string('file_unique_id');
             $table->integer('file_size');
             $table->integer('width');
             $table->integer('height');
