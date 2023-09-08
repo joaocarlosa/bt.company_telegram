@@ -14,6 +14,7 @@ class CreatePhotosTable extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('message_id');
             $table->string('file_id')->unique();
             $table->string('file_unique_id');
             $table->integer('file_size');
