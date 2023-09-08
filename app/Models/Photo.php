@@ -2,25 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class CreatePhotosTable extends Migration
+class Photo extends Model
 {
-    public function up()
-    {
-        Schema::create('photos', function (Blueprint $table) {
-            $table->id();
-            $table->string('file_id');
-            $table->bigInteger('message_id');
-            $table->timestamps();
-        });
-    }
+    use HasFactory;
 
-    public function down()
-    {
-        Schema::dropIfExists('photos');
-    }
+    protected $fillable = [
+        'message_id', 'file_id', 'file_unique_id', 'file_size', 'width', 'height', 'file_path', 'local_path'
+    ];
+    
 }
-
