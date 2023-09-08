@@ -105,15 +105,6 @@ class TelegramController extends Controller
 
         return $filePath; 
     }
-
-    public function showPhotos()
-    {
-        $photos = Photo::all();
-
-        
-        return view('show-photos', ['photos' => $photos]);
-    }
-
-    
+ 
 
 }
