@@ -7,12 +7,18 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
+    
+    protected $commands = [
+        Commands\FetchTelegramUpdates::class,
+    ];
     /**
      * Define the application's command schedule.
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('telegram:fetch-updates')
+             ->everyMinute()
+             ->between('6:00', '21:00');
     }
 
     /**
