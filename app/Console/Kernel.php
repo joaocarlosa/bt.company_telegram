@@ -16,9 +16,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('telegram:fetch-updates')
-             ->everyMinute()
-             ->between('6:00', '21:00');
+        $schedule->command('telegram:fetch-updates')->everyMinute();
+             //->between('6:00', '21:00');
     }
 
     /**
