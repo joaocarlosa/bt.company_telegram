@@ -14,7 +14,7 @@
         .custom-p {
             font-size: 24px;
             color: white;
-            
+
         }
 
         .alignCenter {
@@ -27,19 +27,18 @@
         }
 
         .topLogin {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 2;
-    color: white;
-    padding-top: 20px;   /* Espaçamento no topo */
-    padding-right: 20px; /* Espaçamento à direita */
-}
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 2;
+            color: white;
+            padding-top: 20px;
+            padding-right: 20px;
+        }
 
 
         .text-white-custom {
             color: white !important;
-            /* O `!important` é para sobrescrever qualquer outro estilo */
         }
 
         .no-underline {
@@ -67,7 +66,6 @@
             object-fit: cover;
             z-index: -1;
             ;
-            /* Agora usando contain em vez de cover */
         }
 
         .dark-overlay {
