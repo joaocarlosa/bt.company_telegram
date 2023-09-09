@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TelegramController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\CameraController;
+
 
 
 Route::get('/', function () {
@@ -30,7 +31,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/telegram/getupdates', [TelegramController::class, 'getUpdates']);
     Route::post('/telegram/send', [TelegramController::class, 'sendMessage']);
-    
+
+
+    Route::get('/cameras/exibir', [CameraController::class, 'show'])->name('cameras.index');
+    Route::get('/cameras/cadastrar', [CameraController::class, 'index'])->name('cameras.cadastrar');   
+    Route::post('/cameras/store', [CameraController::class, 'store'])->name('cameras.store');
+    Route::delete('/cameras/delete/{id}', [CameraController::class, 'destroy'])->name('cameras.destroy');
    
 
 

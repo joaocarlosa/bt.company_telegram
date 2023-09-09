@@ -16,6 +16,31 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+
+                <!-- Cameras Dropdown -->
+                <!-- Cameras Dropdown -->
+                <div x-data="{ open: false }" @click.away="open = false" class="relative hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link @click="open = !open" :active="request()->routeIs('cameras')" class="cursor-pointer">
+                        {{ __('Cameras') }}
+                    </x-nav-link>
+
+                    <!-- Dropdown Body -->
+                    <div x-show="open" class="absolute top-full left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 origin-top-right z-10">
+                        <div class="rounded-md divide-y divide-gray-100 focus:outline-none">
+                            <div class="py-1">
+                                <a href="{{ route('cameras.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                                    {{ __('Exibir') }}
+                                </a>
+                                <a href="{{ route('cameras.cadastrar') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                                    {{ __('Cadastrar') }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
 
             <!-- Settings Dropdown -->
