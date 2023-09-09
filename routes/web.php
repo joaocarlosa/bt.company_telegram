@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TelegramController;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\PhotoController;
 
 
 Route::get('/', function () {
@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+    
 
 
 //Route::get('/show-photos', 'TelegramController@showPhotos');
@@ -29,6 +30,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/telegram/getupdates', [TelegramController::class, 'getUpdates']);
     Route::post('/telegram/send', [TelegramController::class, 'sendMessage']);
+    
+   
+
+
 });
 
 require __DIR__.'/auth.php';

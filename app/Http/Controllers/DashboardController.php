@@ -8,7 +8,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $photos = Photo::all();
+        $photos = Photo::orderBy('created_at', 'desc')->paginate(5);
         return view('dashboard', ['photos' => $photos]);
     }
     
