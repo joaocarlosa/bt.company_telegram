@@ -28,9 +28,11 @@
                     this.isLoading = false;
                 });
         }
+
+        // Chama fetchUpdates a cada 1 minutos (60000 milissegundos)
+        setInterval(fetchUpdates, 60000);
     </script>
 
-    <!-- O resto do seu código HTML e Blade permanece o mesmo -->
 
 
 
