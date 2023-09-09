@@ -27,9 +27,10 @@ class CameraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Camera $camera)
+    public function show()
     {
-        return view('cameras.show', compact('camera'));
+        $cameras = Camera::all();
+        return view('cameras.exibir', ['cameras' => $cameras]);
     }
 
     /**

@@ -28,7 +28,7 @@
                     <div x-show="open" class="absolute top-full left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 origin-top-right z-10">
                         <div class="rounded-md divide-y divide-gray-100 focus:outline-none">
                             <div class="py-1">
-                                <a href="{{ route('cameras.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                                <a href="{{ route('cameras.exibir') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                                     {{ __('Exibir') }}
                                 </a>
                                 <a href="{{ route('cameras.cadastrar') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">

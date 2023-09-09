@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/telegram/send', [TelegramController::class, 'sendMessage']);
 
 
-    Route::get('/cameras/exibir', [CameraController::class, 'show'])->name('cameras.index');
+    Route::get('/cameras/exibir', [CameraController::class, 'show'])->name('cameras.exibir');
     Route::get('/cameras/cadastrar', [CameraController::class, 'index'])->name('cameras.cadastrar');   
     Route::post('/cameras/store', [CameraController::class, 'store'])->name('cameras.store');
     Route::delete('/cameras/delete/{id}', [CameraController::class, 'destroy'])->name('cameras.destroy');
